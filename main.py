@@ -3,18 +3,6 @@ import cv2
 import numpy as np
 
 
-width, height = 250, 100
-orwidth, orheight = 1280, 720
-
-
-out = np.zeros((width, height))
-pts = np.float32([])
-# pts2 = np.float32([[0, 0], [width, 0], [width, height], [0, height]])
-pts2 = np.float32([[0, 0], [width, 0], [width, height], [0.8*width, height], [0.2*width, height], [0, height]])
-listt = []
-i = 0
-
-
 def draw(event, x, y, flags, param):
 	global i
 	global numOfPoints
@@ -39,6 +27,15 @@ def draw(event, x, y, flags, param):
 		i = 0
 
 
+width, height = 250, 100
+orwidth, orheight = 1280, 720
+out = np.zeros((width, height))
+pts = np.float32([])
+# pts2 = np.float32([[0, 0], [width, 0], [width, height], [0, height]])
+pts2 = np.float32([[0, 0], [width, 0], [width, height], [0.8*width, height], [0.2*width, height], [0, height]])
+listt = []
+i = 0
+
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', draw)
 
@@ -46,10 +43,8 @@ original = cv2.imread('curve--0-7')
 original = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
 image = np.copy(original)
 while True:
-	# cv2.imshow('orig', original)
 	cv2.imshow('image', image)
 	cv2.imshow('out', out)
-	# cv2.imshow('out', out)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 
