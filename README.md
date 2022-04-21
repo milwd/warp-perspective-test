@@ -1,10 +1,9 @@
 # warp-perspective-test
-quick warp-perspective keypoints test
+quick warp-perspective keypoints test on live camera video
 
-make sure to edit the code according to the number of points you want to select:
-- line 13: edit the pts2 s
-- line 32: edit the if statement (if i == |number-of-points|)
+- camset for Jetson Nano or system camera
+'python main.py'
 
-make sure to double click for each point
+make sure to edit the code according to the number of points you want:
+- edit the 'pts2'
 
-*this is an ugly code and it's not scalable ik, will edit later
