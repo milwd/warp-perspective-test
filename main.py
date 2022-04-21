@@ -143,6 +143,7 @@ class WarpTestCase:
 
 
 if __name__ == "__main__":
+    print('hiii')
     wtc = WarpTestCase()
     cv2.namedWindow('image')
     cv2.setMouseCallback('image', wtc.draw)
